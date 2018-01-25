@@ -3,35 +3,21 @@
 using namespace std;
 int main()
 {
-    long long test_case,value,num_1,num_2,avg;
-    bool check;
+    long long test_case,num1,num2,res1,res2,temp;
     cin>>test_case;
-    for(value=0; value<test_case; value++)
+    while(test_case--)
     {
-        cin>>num_1>>num_2;
-        check=true;
-        if(num_2>num_1)
-            check=false;
-
-        else
-        {
-            avg=(num_1+num_2);
-            if(avg%2!=0)
-            {
-                check=false;
-            }
-            avg=avg>>1;
-            num_2=num_1-avg;
-            num_1=avg;
-        }
-
-        if(check)
-        {
-            cout<<num_1<<" "<<num_2<<endl;
-        }
-        else
-        {
+        cin>>num1>>num2;
+        temp=num1+num2;
+        if(temp%2!=0)
             cout<<"impossible"<<endl;
+        else{
+            res1=temp/2;
+            res2=num1-res1;
+            if(res2<0)
+              cout<<"impossible"<<endl;
+            else
+            cout<<res1<<" "<<res2<<endl;
         }
     }
 }
