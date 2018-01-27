@@ -1,7 +1,7 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-
+  int value,test_case,test,fbs,tbs,len,fbl,tbl;
 int main()
 {
     int value,test_case,test,fbs,tbs,len,fbl,tbl;
@@ -18,6 +18,7 @@ int main()
         if(len%2!=0)
         {
             check=false;
+
         }
         for(value=0; value<len; value++)
         {
@@ -37,7 +38,14 @@ int main()
             {
                 fbl++;
             }
-
+            if(tbs<tbl && sen[value]==']')
+            {
+                check=false;
+            }
+            if(fbs<fbl && sen[value]==')')
+            {
+                check=false;
+            }
             if(sen[value]=='[' && sen[value+1]==')')
             {
                 check=false;
@@ -51,6 +59,7 @@ int main()
         if(fbs!=fbl || tbs!=tbl)
         {
             check=false;
+
         }
 
         if(check)
