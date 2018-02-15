@@ -26,7 +26,6 @@ for(i=3;i<=n;i+=2){
 int main(){
 
 int num,n1,n2,temp;
-freopen("output.txt","w",stdout);
 sieve(19000000);
 while(cin>>num && num){
         bool flag=0;
