@@ -1,17 +1,16 @@
+ara=[0]*6000
 def fibo(n) :
-	if(n<=1) :
-		return n
-	a,b=0,1
+	ara[0]=0
+	ara[1]=1
 	for i in range(2,n+1) :
-		temp=a+b
-		a=b
-		b=temp
-	return b
+		ara[i]=ara[i-1]+ara[i-2]
+
+fibo(5010)	
 try:
 	while 1 :
 		num=int(input())
 		print("The Fibonacci number for",num,"is",end=" ")
-		print(fibo(num))
+		print(ara[num])
 
 except EOFError:
     pass
