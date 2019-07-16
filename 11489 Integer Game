@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+const int nax = 1e3+10;
+char s[nax];
+
+inline int ctoi(char c){
+	return c-'0';
+}
+
+void solve(int caseno){
+	scanf("%s",s);
+	int len = (int)strlen(s);
+	printf("Case %d: ",caseno);
+	
+	int sum = 0;
+	for(int i = 0 ; i < len ; i++)
+		sum += ctoi(s[i]);
+	bool flag = true;
+	int cnt = 0;
+	while(flag){
+		flag = false;
+		for(int i = 0 ; i < len ; i++){
+			if(s[i] != 'X' and (sum-ctoi(s[i]))%3==0){
+				flag = true ;
+				cnt ++;
+				sum -= ctoi(s[i]);
+				s[i] = 'X';
+			}
+		}
+	}
+	if(cnt & 1)
+		puts("S");
+	else
+		puts("T");
+	
+	return ;
+}
+
+int main(){
+	int testcase,caseno=0;
+	scanf("%d",&testcase);
+	while(testcase--)
+		solve(++caseno);
+		
+	return 0;
+}
