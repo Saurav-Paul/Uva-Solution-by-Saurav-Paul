@@ -24,7 +24,7 @@ void solve(int n) {
             for(int c = 1 ; c <= n ; c++){
                 temp += ud[r2][c] - ud[r1-1][c] ;
                 if(temp > mx) mx = temp ;
-                if(temp < 0) temp = 0 ;
+                if(temp < 0) temp = 0 ; 
             }
 
         }
