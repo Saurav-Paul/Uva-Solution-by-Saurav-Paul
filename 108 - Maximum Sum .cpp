@@ -20,13 +20,13 @@ void solve(int n) {
 
     for(int r1 = 1 ; r1 <= n; r1 ++){
         for(int r2 = r1 ; r2 <= n ; r2 ++){
-            for(int c1= 1 ; c1 <= n ; c1 ++){
-                long long temp = 0 ;
-                for(int c2 = c1; c2 <= n ; c2 ++){
-                    temp += ud[r2][c2] - ud[r1-1][c2] ;
-                    mx = max(mx, temp) ;
-                }
+            long long temp = 0 ;
+            for(int c = 1 ; c <= n ; c++){
+                temp += ud[r2][c] - ud[r1-1][c] ;
+                if(temp > mx) mx = temp ;
+                if(temp < 0) temp = 0 ;
             }
+
         }
     }
     
