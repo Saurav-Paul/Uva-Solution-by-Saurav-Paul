@@ -3,8 +3,8 @@
 using namespace std;
 
 void solve(int n) {
-    vector<vector<int> > v(n+1,vector<int>(n+1)) , lr,ud ;
-    lr = ud = v ;
+    vector<vector<int> > v(n+1,vector<int>(n+1)) ,ud ;
+    ud = v ;
     for(int i = 1 ; i <= n; i++){
         for(int j = 1; j <= n ; j++){
             cin >> v[i][j] ;
@@ -13,7 +13,6 @@ void solve(int n) {
 
     for(int i = 1 ; i <= n; i++){
         for(int j = 1; j <= n; j++){
-            lr[i][j] = lr[i][j-1] + v[i][j];
             ud[j][i] = ud[j-1][i] + v[i][j] ;
         }
     }
